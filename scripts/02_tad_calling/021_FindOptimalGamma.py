@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-from basic_utils import *
+from utils import *
 
 from sys import argv
 infile = argv[1]

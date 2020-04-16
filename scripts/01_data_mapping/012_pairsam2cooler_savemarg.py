@@ -5,7 +5,7 @@ import seaborn as sns
 sns.set_style('whitegrid')
 
 import glob
-from basic_utils import *
+from utils import *
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures
