@@ -1,4 +1,4 @@
-# Creates the folder ../DATA/FASTQ/ from GEO ID GSE131811
+# Creates the folder ../../data/FASTQ/ from GEO ID GSE131811
 
 from sys import argv
 if len(argv)<2:
@@ -14,9 +14,9 @@ fastq_dump_options={'split-files': None,
 
 geo_id = 'GSE131811'
 
-gse = GEOparse.get_GEO(geo=geo_id, destdir="./data/FASTQ/TMP_SOFT")
+gse = GEOparse.get_GEO(geo=geo_id, destdir="../../data/FASTQ/TMP_SOFT")
 gsms = gse.gsms
-downloaded_paths = gse.download_SRA(argv[1], directory="./data/FASTQ/",
+downloaded_paths = gse.download_SRA(argv[1], directory="../../data/FASTQ/",
         filetype='fastq', 
         fastq_dump_options=fastq_dump_options, 
         nproc=5, 

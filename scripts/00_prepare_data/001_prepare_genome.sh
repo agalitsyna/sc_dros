@@ -1,4 +1,4 @@
-cd ./data/GENOME/
+cd ../../data/GENOME/
 
 # Obtain file with genome from UCSC Golden Path
 wget http://hgdownload.soe.ucsc.edu/goldenPath/dm3/bigZips/chromFa.tar.gz
