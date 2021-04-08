@@ -5,7 +5,7 @@ import seaborn as sns
 sns.set_style('whitegrid')
 
 import glob
-from utils import *
+from utils import * # from ../../lib/ folder
 
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures
@@ -45,16 +45,14 @@ def reconstruct_sparse(mtx, l_bp, binsize=10000):
 
 from sys import argv
 
-pref = argv[1]
-input_path = argv[2]
+mask        = argv[1]
+pref = cell = argv[2]
 output_path = argv[3]
 
-mask          = f'{input_path}/PAIR/{pref}_*.pairsam'
-cell          = pref
-out_pairix    = f"{input_path}/PAIRIX/{cell}.pairix"
-out_cool_mask = f"{input_path}/COOL/{cell}.{{}}.cool"
-out_stats     = f"{input_path}/STATS/{cell}.filter_stats"
-out_figure    = f"{input_path}/IMG/SIM/save_margi_{cell}_{{}}.pdf"
+out_pairix    = f"{output_path}/{cell}.pairix"
+out_cool_mask = f"{output_path}/{cell}.{{}}.cool"
+out_stats     = f"{output_path}/{cell}.filter_stats"
+out_figure    = f"{output_path}/save_margi_{cell}_{{}}.pdf"
 
 
 chromnames = ['chr4', 'chrX', 'chr2L', 'chr2R', 'chr3L', 'chr3R']
