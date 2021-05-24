@@ -46,14 +46,15 @@ The files needed:
         
         Run python code: ```scripts/00_prepare_data/002_download_data.py```
         
-        Note. The GEO dataset is currently private and the script won't work until it's public.
         The result of this step should be a set of FASTQ files with names formatted as follows: 
         
       ```
       {Cell_name}_{Replicate}_R1.fastq.gz
       {Cell_name}_{Replicate}_R2.fastq.gz
       ```
-      
+        _Note 1._ Sometimes SRA storage experiences internal problems with ftp, and files might not be available through GEOparse. 
+
+        _Note 2._ I recommend the specialized version of GEOParse.
         Dependencies: GEOparse with parallel download option: https://github.com/agalitsyna/GEOparse.git
         To install GEOparse, run: 
         
@@ -61,7 +62,10 @@ The files needed:
         git clone https://github.com/agalitsyna/GEOparse.git
         cd GEOparse
         pip install -e .
-      ```
+        ```
+      
+        _Note 3._ If GEOParse does not install in your environment, or SRA fails to be downloaded from ftp, you may use the direct download from GEO.
+        The resulting FASTQs can be found in [GEO entry GSE131811](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE131811).
 
 #### Raw data processing
 
@@ -80,6 +84,8 @@ bash 012_run_pairsam2cooler.sh
 ```
 
 This should result in a set of COOL files: ```data/COOL/```
+
+_Note._ The resulting COOLs can be alternatively found as supplementary files in [GEO entry GSE131811](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE131811).
 #### TAD calling
 
 TAD calling is performed with lavaburst package and includes the steps of scanning a wide range of gamma parameter and selection of a single set of TADs and sub-TADs. 
